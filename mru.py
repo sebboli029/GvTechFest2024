@@ -18,7 +18,7 @@ def calcular_mru(xo,v,tiempo_total,intervalo):
     while t < tiempo_total:
         x = ((v*t)+xo)
         data.append([t,x])
-        t = t + intervalo
+        t += intervalo
     return data
 
 def mostrar(informacion):

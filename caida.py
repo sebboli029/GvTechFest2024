@@ -24,7 +24,7 @@ def calcular_caida(yo, vo, g, intervalo):
         v = vo +(g*t)
         data.append([t,y,v])
         t = t + intervalo
-        i = i+1
+        i += 1
     return data, round(tf, 2), round(vf, 2)
 
 
