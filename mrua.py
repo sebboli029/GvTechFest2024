@@ -13,6 +13,7 @@ def mrua():
     informacion, tf, x_max, y_max = calcular_mrua(yo, vo, g, intervalo, angulo)
     mostrar(informacion, tf, x_max, y_max)
 
+#funcion para calcular mrua
 def calcular_mrua(yo, vo, g, intervalo, angulo):
     vx = vo*math.cos(math.radians(angulo))
     voy = vo*math.sin(math.radians(angulo))
@@ -28,7 +29,7 @@ def calcular_mrua(yo, vo, g, intervalo, angulo):
         x = vx*t
         vy = voy +(g*t)
         data.append([t,x,y,vx,vy])
-        i = i+1
+        i += 1
         t = t + intervalo
     return data, round(tf, 2), round(x_max, 2), round(y_max, 2)
 
