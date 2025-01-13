@@ -17,7 +17,7 @@ def calcular_mru(xo,v,tiempo_total,intervalo):
     data = []
     t=0
     while t < tiempo_total:
-        x = ((v*t)+xo)
+        x = round((v*t)+xo, 2)
         data.append([t,x])
         t = t + intervalo
     return data
@@ -32,10 +32,6 @@ def mostrar(informacion):
     plt.legend()
     plt.show()
         
-
-
-
-
 if __name__ == "__main__":
     print ("funcion de mru")
     mru()

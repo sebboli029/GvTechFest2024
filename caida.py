@@ -17,16 +17,16 @@ def calcular_caida(yo, vo, g, intervalo):
     y = yo
     data = []
     t=0
-    vf = (vo**2 +(2*abs(g)*yo))**0.5
-    tf = ((2*yo)/(vo+vf))
+    vf = round((vo**2 +(2*abs(g)*yo))**0.5, 2)
+    tf = round((2*yo)/(vo+vf), 2)
     i = 0
     while i < round(tf/intervalo,1):
-        y = ((vo*t)+(g*(t**2)/2)+yo)
-        v = vo +(g*t)
+        y = round((vo*t)+(g*(t**2)/2)+yo , 2)
+        v = round(vo +(g*t), 2)
         data.append([t,y,v])
         t = t + intervalo
         i += 1
-    return data, round(tf, 2), round(vf, 2)
+    return data, tf, vf
 
 
 def mostrar(informacion, tf, vf):

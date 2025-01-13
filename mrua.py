@@ -15,23 +15,24 @@ def mrua():
 
 #funcion para calcular mrua
 def calcular_mrua(yo, vo, g, intervalo, angulo):
-    vx = vo*math.cos(math.radians(angulo))
-    voy = vo*math.sin(math.radians(angulo))
+    vx = round(vo*math.cos(math.radians(angulo)), 2)
+    voy = round(vo*math.sin(math.radians(angulo)), 2)
     y = yo
     data = []
     t=0
-    tf = (voy+math.sqrt(voy**2+(2*abs(g)*yo)))/abs(g)
-    x_max = vx*tf
-    y_max = yo+(voy**2/(2*abs(g)))
+    tf = round((voy+math.sqrt(voy**2+(2*abs(g)*yo)))/abs(g), 2)
+    x_max = round(vx*tf, 2)
+    y_max = round(yo+(voy**2/(2*abs(g))), 2)
     i = 0
     while i < round(tf/intervalo,1):
-        y = (voy*t)+(g*(t**2)/2)+yo
-        x = vx*t
-        vy = voy +(g*t)
+        y =  round((voy*t)+(g*(t**2)/2)+yo, 2)
+        x =  round(vx*t, 2)
+        vy = round(voy +(g*t), 2)
         data.append([t,x,y,vx,vy])
+        print(data)
         i += 1
         t = t + intervalo
-    return data, round(tf, 2), round(x_max, 2), round(y_max, 2)
+    return data, tf, x_max, y_max
 
 def mostrar(informacion, tf , x_max, y_max):
     print(tabulate(informacion, headers=['Tiempo(s)', 'Posicion X (m)','Posicion Y (m)','Velocidad X(m/s)','Velocidad Y(m/s)'], tablefmt='fancy_grid')) 
