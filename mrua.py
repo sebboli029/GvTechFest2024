@@ -29,7 +29,6 @@ def calcular_mrua(yo, vo, g, intervalo, angulo):
         x =  round(vx*t, 2)
         vy = round(voy +(g*t), 2)
         data.append([t,x,y,vx,vy])
-        print(data)
         i += 1
         t = t + intervalo
     return data, tf, x_max, y_max
